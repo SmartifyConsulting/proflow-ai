@@ -660,6 +660,80 @@ export type Database = {
           },
         ]
       }
+      api_partner_keys: {
+        Row: {
+          created_at: string
+          id: string
+          key_hash: string
+          key_prefix: string
+          last_used_at: string | null
+          partner_id: string
+          revoked_at: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          key_hash: string
+          key_prefix: string
+          last_used_at?: string | null
+          partner_id: string
+          revoked_at?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          key_hash?: string
+          key_prefix?: string
+          last_used_at?: string | null
+          partner_id?: string
+          revoked_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "api_partner_keys_partner_id_fkey"
+            columns: ["partner_id"]
+            isOneToOne: false
+            referencedRelation: "api_partners"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      api_partners: {
+        Row: {
+          allowed_categories: string[]
+          contact_email: string | null
+          created_at: string
+          created_by: string | null
+          id: string
+          name: string
+          partner_type: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          allowed_categories?: string[]
+          contact_email?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          name: string
+          partner_type?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          allowed_categories?: string[]
+          contact_email?: string | null
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          name?: string
+          partner_type?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       app_modules: {
         Row: {
           description: string | null
@@ -6193,6 +6267,97 @@ export type Database = {
             columns: ["provider_id"]
             isOneToOne: false
             referencedRelation: "holarchelp_ambulance_providers_public"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      partner_access_log: {
+        Row: {
+          category: string | null
+          created_at: string
+          endpoint: string
+          id: string
+          ip: string | null
+          partner_id: string | null
+          patient_id: string | null
+          patient_user_id: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          endpoint: string
+          id?: string
+          ip?: string | null
+          partner_id?: string | null
+          patient_id?: string | null
+          patient_user_id?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          endpoint?: string
+          id?: string
+          ip?: string | null
+          partner_id?: string | null
+          patient_id?: string | null
+          patient_user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "partner_access_log_partner_id_fkey"
+            columns: ["partner_id"]
+            isOneToOne: false
+            referencedRelation: "api_partners"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      partner_access_requests: {
+        Row: {
+          categories: string[]
+          created_at: string
+          expires_at: string | null
+          id: string
+          partner_id: string
+          patient_id: string
+          patient_user_id: string | null
+          purpose: string | null
+          reference: string | null
+          responded_at: string | null
+          status: string
+        }
+        Insert: {
+          categories: string[]
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          partner_id: string
+          patient_id: string
+          patient_user_id?: string | null
+          purpose?: string | null
+          reference?: string | null
+          responded_at?: string | null
+          status?: string
+        }
+        Update: {
+          categories?: string[]
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          partner_id?: string
+          patient_id?: string
+          patient_user_id?: string | null
+          purpose?: string | null
+          reference?: string | null
+          responded_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "partner_access_requests_partner_id_fkey"
+            columns: ["partner_id"]
+            isOneToOne: false
+            referencedRelation: "api_partners"
             referencedColumns: ["id"]
           },
         ]

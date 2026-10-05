@@ -1,0 +1,1 @@
+- External partner access goes only through the `partner-api` edge function using hashed `hk_live_` keys, gated per category by patient-approved, expiring `partner_access_requests` and logged in `partner_access_log` — partners never get database logins, and patients keep control of their data.
