@@ -36,7 +36,7 @@ export default function ProviderSignup() {
 
   const initialKind: ProviderKind = (() => {
     const k = searchParams.get("kind");
-    return k === "hospital" || k === "emergency" || k === "insurance" || k === "pharmacy"
+    return k === "hospital" || k === "emergency" || k === "pharmacy"
       ? (k as ProviderKind)
       : "hospital";
   })();
@@ -296,7 +296,6 @@ export default function ProviderSignup() {
                   <SelectContent>
                     <SelectItem value="hospital">{t("auth.provider.hospital")}</SelectItem>
                     <SelectItem value="emergency">{t("auth.provider.emergency")}</SelectItem>
-                    <SelectItem value="insurance">{t("auth.provider.insurance")}</SelectItem>
                     <SelectItem value="pharmacy">{t("auth.provider.pharmacy")}</SelectItem>
                   </SelectContent>
                 </Select>
