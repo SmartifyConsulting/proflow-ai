@@ -95,8 +95,9 @@ export default function Partners() {
           <div className="space-y-1.5"><Label>Company name</Label><Input value={name} onChange={(e) => setName(e.target.value)} /></div>
           <div className="space-y-1.5"><Label>Type</Label>
             <select className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm" value={type} onChange={(e) => setType(e.target.value)}>
-              <option value="insurer">Insurer / Medical aid</option>
-              <option value="employer">Employer</option>
+              <option value="insurer">Insurance</option>
+              <option value="fsp">FSP</option>
+              <option value="broker">Broker</option>
               <option value="other">Other</option>
             </select>
           </div>
