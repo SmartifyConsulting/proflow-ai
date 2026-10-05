@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useMyRewards } from "@/hooks/usePatientRewards";
 import { EmergencyContact } from "@/features/patients/components/EmergencyContactsSection";
 import { ProfileCompletionBanner } from "@/components/profile/ProfileCompletionBanner";
+import { ConnectedCompanies } from "@/features/patients/components/ConnectedCompanies";
 
 
 
@@ -204,6 +205,8 @@ export default function MyDetails() {
       </div>
 
       {isIncomplete && section === "health" && <ProfileCompletionBanner />}
+
+      {userId && section === "health" && <ConnectedCompanies userId={userId} />}
 
       {patient ? (
         <PatientDetailsEditor

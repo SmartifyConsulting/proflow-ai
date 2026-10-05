@@ -156,6 +156,7 @@ const adminNavItems: NavItem[] = [
   { icon: LayoutDashboard, label: "Home", labelKey: "nav.home", to: "/doctor-dashboard" },
   { icon: Users, label: "Users", labelKey: "nav.users", to: "/admin/users" },
   { icon: BarChart3, label: "Performance", labelKey: "nav.performance", to: "/admin/performance" },
+  { icon: Building2, label: "Partners", labelKey: "nav.partners", to: "/admin/partners" },
   { icon: DollarSign, label: "Pricing", labelKey: "nav.pricing", to: "/admin/pricing" },
   { icon: Gift, label: "Rewards", labelKey: "nav.rewards", to: "/admin/gamification" },
   { icon: Siren, label: "SOS", labelKey: "nav.sos", to: "/patient/holarchelp", danger: true },
