@@ -8,6 +8,13 @@
       "when": 1791229558091,
       "tag": "0000_partner_api",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795430054965,
+      "tag": "0001_tighten_permissive_rls",
+      "breakpoints": true
     }
   ]
 }

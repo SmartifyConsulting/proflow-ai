@@ -11202,6 +11202,7 @@ export type Database = {
         Returns: boolean
       }
       is_nurse_record_admin: { Args: { _nurse_id: string }; Returns: boolean }
+      is_ops_staff: { Args: { _user_id: string }; Returns: boolean }
       is_own_nurse_record: { Args: { _nurse_id: string }; Returns: boolean }
       is_paramedic: { Args: { _user_id: string }; Returns: boolean }
       is_practice_assistant: { Args: { _user_id: string }; Returns: boolean }
